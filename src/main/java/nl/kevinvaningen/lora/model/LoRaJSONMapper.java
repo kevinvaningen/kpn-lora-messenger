@@ -13,6 +13,7 @@ public class LoRaJSONMapper {
     public static LoraDataFrame processJSON(JSONObject json) throws IllegalArgumentException {
         ObjectMapper mapper = new ObjectMapper();
 
+
         try {
             LoraDataFrame loraDataFrame = (LoraDataFrame) mapper.readValue(json.toString(), LoraDataFrame.class);
             loraDataFrame.setPayloadHex(LoRaJSONMapper.hexToString(loraDataFrame.getPayloadHex()));
