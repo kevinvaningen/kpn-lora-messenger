@@ -23,6 +23,7 @@ public class LoRaJSONMapper {
             throw new IllegalArgumentException("JSON to object conversion failed");
         }
     }
+
     private static void manipulateOrAugmentLoraDataFrame(LoraDataFrame loraDataFrame) {
         loraDataFrame.setPayloadHex(LoRaJSONMapper.hexToString(loraDataFrame.getPayloadHex()));
     }
