@@ -24,7 +24,6 @@ public class LoRaMessengerApplication {
 
         MQTTCONFIGURATION = configurationReader.getBrokerConfiguration();
 
-
         if(MQTTCONFIGURATION != null) {
             SpringApplication.run(LoRaMessengerApplication.class, args);
             LOGGER.debug("Broker configuration-url is: "+MQTTCONFIGURATION.getBrokerUrl());
