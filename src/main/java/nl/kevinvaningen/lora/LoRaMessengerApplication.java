@@ -19,10 +19,11 @@ public class LoRaMessengerApplication {
      * @param args
      */
     public static void main(String[] args) {
-        SpringApplication.run(LoRaMessengerApplication.class, args);
+        //SpringApplication.run(LoRaMessengerApplication.class, args);
         LOGGER.info("Starting messenger application.");
 
         MQTTCONFIGURATION = configurationReader.getBrokerConfiguration();
+
 
         if(MQTTCONFIGURATION != null) {
             SpringApplication.run(LoRaMessengerApplication.class, args);

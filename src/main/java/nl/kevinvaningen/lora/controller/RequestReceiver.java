@@ -1,9 +1,5 @@
 package nl.kevinvaningen.lora.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.IOException;
-
 import nl.kevinvaningen.lora.LoRaMessengerApplication;
 import nl.kevinvaningen.lora.Publishable;
 import nl.kevinvaningen.lora.XMLtoJSONConverter;
@@ -11,7 +7,6 @@ import nl.kevinvaningen.lora.model.LoRaJSONMapper;
 import nl.kevinvaningen.lora.model.LoraDataFrame;
 import nl.kevinvaningen.lora.mqtt.MqttBrokerClientConnector;
 import org.json.JSONObject;
-import org.json.XML;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestBody;

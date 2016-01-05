@@ -1,12 +1,16 @@
 package nl.kevinvaningen.lora.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+
+//   <ModelCfg>0</ModelCfg>   <ADRbit>1</ADRbit>
+
 
 @JsonInclude(Include.NON_NULL)
-@JsonPropertyOrder({"LrrSNR", "Lrrid", "Lrrs", "SpFact", "SubBand", "CustomerData", "FPort", "Channel", "FCntUp", "Time", "DevEUI", "payload_hex", "CustomerID", "LrrRSSI", "mic_hex", "xmlns", "LrrLON", "LrrLAT", "FCntDn", "Lrcid", "DevLrrCnt"})
+@JsonPropertyOrder({"LrrSNR", "Lrrid", "Lrrs", "SpFact", "SubBand", "CustomerData", "FPort", "Channel", "FCntUp", "Time", "DevEUI", "payload_hex", "CustomerID", "LrrRSSI", "mic_hex", "xmlns", "LrrLON", "LrrLAT", "FCntDn", "Lrcid", "DevLrrCnt", "ModelCfg", "ADRbit"})
 public class LoraDataFrame {
     @JsonProperty("LrrSNR")
     private String LrrSNR;
@@ -50,6 +54,12 @@ public class LoraDataFrame {
     private String Lrcid;
     @JsonProperty("DevLrrCnt")
     private int DevLrrCnt;
+    @JsonProperty("ModelCfg")
+    private int ModelCfg;
+    @JsonProperty("ADRbit")
+    private int ADRbit;
+
+
 
     public LoraDataFrame() {
     }
@@ -264,7 +274,52 @@ public class LoraDataFrame {
         this.DevLrrCnt = DevLrrCnt;
     }
 
+    @JsonProperty("ModelCfg")
+    public int getModelCfg() {
+        return ModelCfg;
+    }
+
+    @JsonProperty("ModelCfg")
+    public void setModelCfg(int modelCfg) {
+        ModelCfg = modelCfg;
+    }
+
+    @JsonProperty("ADRbit")
+    public int getADRbit() {
+        return ADRbit;
+    }
+
+    @JsonProperty("ADRbit")
+    public void setADRbit(int ADRbit) {
+        this.ADRbit = ADRbit;
+    }
+
+    @Override
     public String toString() {
-        return LoraDataFrame.class.getSimpleName() + " {" + "LrrSNR=\'" + this.LrrSNR + '\'' + ", Lrrid=\'" + this.Lrrid + '\'' + ", Lrrs=" + this.Lrrs.toString() + ", SpFact=" + this.SpFact + ", SubBand=\'" + this.SubBand + '\'' + ", CustomerData=\'" + this.CustomerData + '\'' + ", FPort=" + this.FPort + ", Channel=\'" + this.Channel + '\'' + ", FCntUp=" + this.FCntUp + ", Time=\'" + this.Time + '\'' + ", DevEUI=\'" + this.DevEUI + '\'' + ", payloadHex=\'" + this.payloadHex + '\'' + ", CustomerID=" + this.CustomerID + ", LrrRSSI=\'" + this.LrrRSSI + '\'' + ", micHex=\'" + this.micHex + '\'' + ", xmlns=\'" + this.xmlns + '\'' + ", LrrLON=" + this.LrrLON + ", LrrLAT=" + this.LrrLAT + ", FCntDn=" + this.FCntDn + ", Lrcid=\'" + this.Lrcid + '\'' + ", DevLrrCnt=" + this.DevLrrCnt + '}';
+        return "LoraDataFrame{" +
+                "LrrSNR='" + LrrSNR + '\'' +
+                ", Lrrid='" + Lrrid + '\'' +
+                ", Lrrs=" + Lrrs +
+                ", SpFact=" + SpFact +
+                ", SubBand='" + SubBand + '\'' +
+                ", CustomerData='" + CustomerData + '\'' +
+                ", FPort=" + FPort +
+                ", Channel='" + Channel + '\'' +
+                ", FCntUp=" + FCntUp +
+                ", Time='" + Time + '\'' +
+                ", DevEUI='" + DevEUI + '\'' +
+                ", payloadHex='" + payloadHex + '\'' +
+                ", CustomerID=" + CustomerID +
+                ", LrrRSSI='" + LrrRSSI + '\'' +
+                ", micHex='" + micHex + '\'' +
+                ", xmlns='" + xmlns + '\'' +
+                ", LrrLON=" + LrrLON +
+                ", LrrLAT=" + LrrLAT +
+                ", FCntDn=" + FCntDn +
+                ", Lrcid='" + Lrcid + '\'' +
+                ", DevLrrCnt=" + DevLrrCnt +
+                ", ModelCfg=" + ModelCfg +
+                ", ADRbit=" + ADRbit +
+                '}';
     }
 }
