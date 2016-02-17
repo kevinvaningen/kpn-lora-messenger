@@ -43,7 +43,8 @@ public class RequestReceiver {
 
         if (LoRaMessengerApplication.getApplicationBrokerConfiguration() != null) {
             this.mqttBrokerClientConnector = new MqttBrokerClientConnector(LoRaMessengerApplication.getApplicationBrokerConfiguration());
-            mqttBrokerClientConnector.publish(LORA__TOPIC, loraDataFrame.toString());
+            JSONObject serialisedJSON = new JSONObject(loraDataFrame);
+            mqttBrokerClientConnector.publish(LORA__TOPIC, serialisedJSON.toString());
         } else {
             LOGGER.error("Error occured in MQTT config. Cannot publish.");
             throw new RuntimeException("Error occured in setting MQTT config.");

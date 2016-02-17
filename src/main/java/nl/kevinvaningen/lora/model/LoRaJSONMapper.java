@@ -18,8 +18,8 @@ public class LoRaJSONMapper {
             loraDataFrame.setPayloadHex(LoRaJSONMapper.hexToString(loraDataFrame.getPayloadHex()));
 
             return loraDataFrame;
-        } catch (IOException var5) {
-            var5.printStackTrace();
+        } catch (IOException exception) {
+            exception.printStackTrace();
             throw new IllegalArgumentException("JSON to object conversion failed");
         }
     }

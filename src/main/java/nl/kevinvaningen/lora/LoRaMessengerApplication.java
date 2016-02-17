@@ -27,7 +27,7 @@ public class LoRaMessengerApplication {
             SpringApplication.run(LoRaMessengerApplication.class, args);
             LOGGER.debug("Broker configuration-url is: "+MQTTCONFIGURATION.getBrokerUrl());
         }else{
-            String fault = "Sprint could not innitialize application due to bad MQTT configuration.";
+            String fault = "Spring Boot could not innitialize application due to bad MQTT configuration.";
             LOGGER.error(fault);
             throw new RuntimeException(fault);
         }
